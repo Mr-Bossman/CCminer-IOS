@@ -25,47 +25,67 @@
                                     <action selector="Button" destination="BYZ-38-t0r" eventType="touchDown" id="Okn-XM-Hbm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-by-ssd">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-by-ssd">
                                 <rect key="frame" x="159" y="138" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" hint="test" identifier="test"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="TextFeild1" destination="BYZ-38-t0r" eventType="editingChanged" id="PTK-Tr-91S"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kfG-er-QDJ"/>
+                                    <action selector="TextDef2" destination="BYZ-38-t0r" eventType="editingDidEnd" id="UiG-5b-Jxd"/>
+                                    <action selector="TextFeild2" destination="BYZ-38-t0r" eventType="editingChanged" id="b4W-Uv-YGM"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-WV-FI8">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bob" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-WV-FI8">
                                 <rect key="frame" x="159" y="180" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TextDef3" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kON-LJ-Pt7"/>
+                                    <action selector="TextFeild3" destination="BYZ-38-t0r" eventType="editingChanged" id="SOD-bB-kpV"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-tX-VT7">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-tX-VT7">
                                 <rect key="frame" x="159" y="222" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TextDef4" destination="BYZ-38-t0r" eventType="editingDidEnd" id="F6s-em-m0H"/>
+                                    <action selector="TextFeild4" destination="BYZ-38-t0r" eventType="editingChanged" id="cZw-zv-Rl4"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89c-SQ-2g2">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="threads" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89c-SQ-2g2">
                                 <rect key="frame" x="159" y="264" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TextDef5" destination="BYZ-38-t0r" eventType="editingDidEnd" id="pxK-lk-bxf"/>
+                                    <action selector="TextFeild5" destination="BYZ-38-t0r" eventType="editingChanged" id="Q7u-fs-41O"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-hX-EE3">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-hX-EE3">
                                 <rect key="frame" x="159" y="96" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="TextDef1" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Gxt-yj-43i"/>
+                                    <action selector="TextFeild1" destination="BYZ-38-t0r" eventType="editingChanged" id="VtI-s8-y3L"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="TextFeild1Data" destination="LaE-by-ssd" id="2WA-ir-9Wd"/>
+                        <outlet property="TextFeild1Data" destination="YJV-hX-EE3" id="UKj-od-nA1"/>
+                        <outlet property="TextFeild2Data" destination="LaE-by-ssd" id="DR2-Fz-Usw"/>
+                        <outlet property="TextFeild3Data" destination="8pt-WV-FI8" id="7fU-0P-gDe"/>
+                        <outlet property="TextFeild4Data" destination="2Bn-tX-VT7" id="dWL-E0-7g8"/>
+                        <outlet property="TextFeild5Data" destination="89c-SQ-2g2" id="bHt-se-mCA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
