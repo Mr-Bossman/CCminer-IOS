@@ -10,6 +10,8 @@ class ViewController: UIViewController {
     var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob","-p","x","-a","verus","-t","2"]
     let settings = UserDefaults.standard
     var workItem = DispatchWorkItem {}
+    var pipe = Pipe()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
@@ -37,14 +39,36 @@ class ViewController: UIViewController {
         TextFeild4Data.text = settings.string(forKey: "Text4")
         TextFeild5Data.text = settings.string(forKey: "Text5")
         DispatchQueue.global().async(execute: workItem)
+        openConsolePipe ()
 
     }
+    @IBOutlet weak var buttonText: UIButton!
     @IBAction func Button (){
         args[1] = TextFeild1Data.text!
         args[3] = TextFeild2Data.text! + "." + TextFeild3Data.text!
         args[5] = TextFeild3Data.text!
         args[9] = TextFeild5Data.text!
+        print("done")
+        buttonText.setTitle("Stop", for: .normal)
+        DispatchQueue.main.async {
+            self.workItem.cancel()
+        }
 
+    }
+    @IBOutlet weak var textView: UITextView!
+    func openConsolePipe () {
+        setvbuf(stdout, nil, _IONBF, 0)
+        dup2(pipe.fileHandleForWriting.fileDescriptor,
+            STDOUT_FILENO)
+        // listening on the readabilityHandler
+        pipe.fileHandleForReading.readabilityHandler = {
+         [weak self] handle in
+        let data = handle.availableData
+        let str = String(data: data, encoding: .ascii) ?? "<Non-ascii data of size\(data.count)>\n"
+        DispatchQueue.main.async {
+            self?.textView.text += str
+        }
+      }
     }
     func Defaults(_ key :String, _ text:String){
         if settings.string(forKey: key) == nil {
