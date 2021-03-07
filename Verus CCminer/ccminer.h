@@ -10,5 +10,6 @@
 
 #include <stdio.h>
 int start_mining(int argc,char *argv[]);
+void prop_exit();
 
 #endif /* ccminer_h */
