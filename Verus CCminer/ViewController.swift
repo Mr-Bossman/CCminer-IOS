@@ -6,20 +6,36 @@
 //
 import Dispatch
 import UIKit
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate  {
     var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob","-p","x","-a","verus","-t","2"]
     let settings = UserDefaults.standard
     var workItem = DispatchWorkItem {}
     var pipe = Pipe()
     var running = false
-    
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        TextFeild1Data.delegate = self
+        TextFeild2Data.delegate = self
+        TextFeild3Data.delegate = self
+        TextFeild4Data.delegate = self
+        TextFeild5Data.delegate = self
+
         start()
     }
+    @IBAction func done(_ textField: UITextField) {
+        TextFeild1Data.resignFirstResponder()
+        TextFeild2Data.resignFirstResponder()
+        TextFeild3Data.resignFirstResponder()
+        TextFeild4Data.resignFirstResponder()
+        TextFeild5Data.resignFirstResponder()
+
+    }
     func MineV(){
-        Mine(args)
+        _ = Mine(args)
     }
     func start() {
         Defaults("Text1","stratum+tcp://pool.veruscoin.io:9999")
@@ -68,7 +84,7 @@ class ViewController: UIViewController {
         pipe.fileHandleForReading.readabilityHandler = {
          [weak self] handle in
         let data = handle.availableData
-        let str = String(data: data, encoding: .ascii) ?? "<Non-ascii data of size\(data.count)>\n"
+        let str = String(data: data, encoding: .utf8) ?? "<Non-ascii data of size\(data.count)>\n"
         DispatchQueue.main.async {
             self?.textView.text += str
             let textV = self?.textView
