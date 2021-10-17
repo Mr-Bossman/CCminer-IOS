@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880FB76B271BF9A40058BCC4 /* nothing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 880FB76A271BF9A40058BCC4 /* nothing.mp3 */; };
 		8877DB6A25EECDB7006E5C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6925EECDB7006E5C73 /* AppDelegate.swift */; };
 		8877DB6C25EECDB7006E5C73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6B25EECDB7006E5C73 /* SceneDelegate.swift */; };
 		8877DB6E25EECDB7006E5C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6D25EECDB7006E5C73 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880FB76A271BF9A40058BCC4 /* nothing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = nothing.mp3; sourceTree = "<group>"; };
 		8877DB6625EECDB7006E5C73 /* Verus CCminer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verus CCminer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8877DB6925EECDB7006E5C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8877DB6B25EECDB7006E5C73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		8877DB5D25EECDB7006E5C73 = {
 			isa = PBXGroup;
 			children = (
+				880FB76A271BF9A40058BCC4 /* nothing.mp3 */,
 				8877DB6825EECDB7006E5C73 /* Verus CCminer */,
 				8877DB7F25EECDB9006E5C73 /* Verus CCminerTests */,
 				8877DB8A25EECDB9006E5C73 /* Verus CCminerUITests */,
@@ -239,9 +242,6 @@
 		8877DB5E25EECDB7006E5C73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				KnownAssetTags = (
-					tes,
-				);
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
@@ -284,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880FB76B271BF9A40058BCC4 /* nothing.mp3 in Resources */,
 				8877DB7625EECDB9006E5C73 /* LaunchScreen.storyboard in Resources */,
 				8877DB7325EECDB9006E5C73 /* Assets.xcassets in Resources */,
 				8877DB7125EECDB7006E5C73 /* Main.storyboard in Resources */,

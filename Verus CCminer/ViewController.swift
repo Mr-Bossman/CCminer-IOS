@@ -6,14 +6,19 @@
 //
 import Dispatch
 import UIKit
-class ViewController: UIViewController, UITextFieldDelegate  {
-    var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob","-p","x","-a","verus","-t","2"]
+
+import Foundation
+import AVFoundation
+
+ // ar cru minerd.a `find . -name "*.o"`
+class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegate  {
+    var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob","-p","x","-a","verus","-t","2","-b=0"]
     let settings = UserDefaults.standard
     var workItem = DispatchWorkItem {}
     var pipe = Pipe()
     var running = false
     var backgroundTask = UIBackgroundTaskIdentifier.invalid
-
+    var audioPlayer: AVAudioPlayer?
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -41,6 +46,23 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         TextFeild5Data.delegate = self
         registerBackgroundTask()
         start()
+        do {
+            let aSound = URL(fileURLWithPath: Bundle.main.path(forResource: "nothing", ofType: "mp3")!)
+            audioPlayer = try AVAudioPlayer(contentsOf: aSound)
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print(error)
+            }
+            audioPlayer!.setVolume(0.0, fadeDuration: CFTimeInterval())
+            audioPlayer!.numberOfLoops = -1
+            audioPlayer!.prepareToPlay()
+            audioPlayer!.delegate = self
+            audioPlayer!.play()
+        } catch {
+            print("Cannot play the file")
+        }
     }
     @IBAction func done(_ textField: UITextField) {
         TextFeild1Data.resignFirstResponder()
@@ -69,9 +91,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         workItem = DispatchWorkItem {
             self.MineV()
             DispatchQueue.main.async {
-                self.running = false
-                self.buttonText.setTitle("Start", for: .normal)
-
             }
         }
     }
@@ -82,7 +101,11 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         args[5] = TextFeild3Data.text!
         args[9] = TextFeild5Data.text!
         if(running){
-            prop_exit()
+            self.running = false
+            self.buttonText.setTitle("Start", for: .normal)
+            DispatchQueue.global(qos: .userInitiated).async {
+                prop_exit()
+            }
         } else {
             running = true
             DispatchQueue.global().async(execute: workItem)
@@ -182,7 +205,12 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         _ = stringMutableBufferPointer.initialize(from: stringArray)
         // get baseAddress as an UnsafePointer<UnsafePointer<CChar>?>?
         let enabledLayers = UnsafeMutablePointer(stringMutableBufferPointer.baseAddress)
-        return start_mining(Int32(args.count), enabledLayers)
+        let ret = start_mining(Int32(args.count), enabledLayers)
+        stringMutableBufferPointer.deallocate()
+        for i in stringArray{
+            i?.deallocate()
+        }
+        return ret
     }
 
 
