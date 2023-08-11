@@ -12,9 +12,25 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     var workItem = DispatchWorkItem {}
     var pipe = Pipe()
     var running = false
+    var backgroundTask = UIBackgroundTaskIdentifier.invalid
+
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.endBackgroundTask()
+        }
+        assert(backgroundTask != UIBackgroundTaskIdentifier.invalid)
+    }
+       
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = UIBackgroundTaskIdentifier.invalid
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         TextFeild3Data.delegate = self
         TextFeild4Data.delegate = self
         TextFeild5Data.delegate = self
-
+        registerBackgroundTask()
         start()
     }
     @IBAction func done(_ textField: UITextField) {
