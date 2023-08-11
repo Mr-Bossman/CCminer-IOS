@@ -58,6 +58,7 @@ class ViewController: UIViewController {
         }
 
     }
+
     @IBOutlet weak var textView: UITextView!
     func openConsolePipe () {
         setvbuf(stdout, nil, _IONBF, 0)
@@ -70,6 +71,12 @@ class ViewController: UIViewController {
         let str = String(data: data, encoding: .ascii) ?? "<Non-ascii data of size\(data.count)>\n"
         DispatchQueue.main.async {
             self?.textView.text += str
+            let textV = self?.textView
+            if textV!.text.count > 0 {
+                let location = textV!.text.count - 1
+                let bottom = NSMakeRange(location, 1)
+                textV!.scrollRangeToVisible(bottom)
+            }
         }
       }
     }

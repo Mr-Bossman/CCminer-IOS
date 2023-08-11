@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,76 +18,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTv-ej-hrs">
-                                <rect key="frame" x="190" y="340" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mTX-kc-BLc">
+                                <rect key="frame" x="146" y="89" width="122" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-hX-EE3">
+                                        <rect key="frame" x="0.0" y="0.0" width="122" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="TextDef1" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Gxt-yj-43i"/>
+                                            <action selector="TextFeild1" destination="BYZ-38-t0r" eventType="editingChanged" id="VtI-s8-y3L"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-by-ssd">
+                                        <rect key="frame" x="0.0" y="42" width="122" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" hint="test" identifier="test"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="TextDef2" destination="BYZ-38-t0r" eventType="editingDidEnd" id="UiG-5b-Jxd"/>
+                                            <action selector="TextFeild2" destination="BYZ-38-t0r" eventType="editingChanged" id="b4W-Uv-YGM"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bob" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-WV-FI8">
+                                        <rect key="frame" x="0.0" y="84" width="122" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="TextDef3" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kON-LJ-Pt7"/>
+                                            <action selector="TextFeild3" destination="BYZ-38-t0r" eventType="editingChanged" id="SOD-bB-kpV"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-tX-VT7">
+                                        <rect key="frame" x="0.0" y="126" width="122" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="TextDef4" destination="BYZ-38-t0r" eventType="editingDidEnd" id="F6s-em-m0H"/>
+                                            <action selector="TextFeild4" destination="BYZ-38-t0r" eventType="editingChanged" id="cZw-zv-Rl4"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="threads" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89c-SQ-2g2">
+                                        <rect key="frame" x="0.0" y="168" width="122" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="e4H-YE-i8w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="TextDef5" destination="BYZ-38-t0r" eventType="editingDidEnd" id="pxK-lk-bxf"/>
+                                            <action selector="TextFeild5" destination="BYZ-38-t0r" eventType="editingChanged" id="Q7u-fs-41O"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTv-ej-hrs">
+                                <rect key="frame" x="157" y="303" width="100" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="Button" destination="BYZ-38-t0r" eventType="touchDown" id="Okn-XM-Hbm"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LaE-by-ssd">
-                                <rect key="frame" x="159" y="138" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" hint="test" identifier="test"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TextDef2" destination="BYZ-38-t0r" eventType="editingDidEnd" id="UiG-5b-Jxd"/>
-                                    <action selector="TextFeild2" destination="BYZ-38-t0r" eventType="editingChanged" id="b4W-Uv-YGM"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bob" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8pt-WV-FI8">
-                                <rect key="frame" x="159" y="180" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TextDef3" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kON-LJ-Pt7"/>
-                                    <action selector="TextFeild3" destination="BYZ-38-t0r" eventType="editingChanged" id="SOD-bB-kpV"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-tX-VT7">
-                                <rect key="frame" x="159" y="222" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TextDef4" destination="BYZ-38-t0r" eventType="editingDidEnd" id="F6s-em-m0H"/>
-                                    <action selector="TextFeild4" destination="BYZ-38-t0r" eventType="editingChanged" id="cZw-zv-Rl4"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="threads" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89c-SQ-2g2">
-                                <rect key="frame" x="159" y="264" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TextDef5" destination="BYZ-38-t0r" eventType="editingDidEnd" id="pxK-lk-bxf"/>
-                                    <action selector="TextFeild5" destination="BYZ-38-t0r" eventType="editingChanged" id="Q7u-fs-41O"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pool:port" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-hX-EE3">
-                                <rect key="frame" x="159" y="96" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="TextDef1" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Gxt-yj-43i"/>
-                                    <action selector="TextFeild1" destination="BYZ-38-t0r" eventType="editingChanged" id="VtI-s8-y3L"/>
-                                </connections>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-HD-dea">
-                                <rect key="frame" x="87" y="449" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofd-HD-dea">
+                                <rect key="frame" x="20" y="391" width="374" height="461"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mTX-kc-BLc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="3Vd-ue-Oxe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ofd-HD-dea" secondAttribute="bottom" constant="10" id="B3C-o4-Gwy"/>
+                            <constraint firstItem="hTv-ej-hrs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="D9r-TU-jiq"/>
+                            <constraint firstItem="mTX-kc-BLc" firstAttribute="centerX" secondItem="hTv-ej-hrs" secondAttribute="centerX" id="ICq-Rk-cuu"/>
+                            <constraint firstItem="hTv-ej-hrs" firstAttribute="top" secondItem="mTX-kc-BLc" secondAttribute="bottom" constant="14" id="Tev-A0-Wpd"/>
+                            <constraint firstItem="hTv-ej-hrs" firstAttribute="centerX" secondItem="Ofd-HD-dea" secondAttribute="centerX" id="gGp-hb-s0u"/>
+                            <constraint firstItem="Ofd-HD-dea" firstAttribute="top" secondItem="hTv-ej-hrs" secondAttribute="bottom" constant="58" id="kby-5c-y2y"/>
+                            <constraint firstItem="Ofd-HD-dea" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="pXP-jl-OGA"/>
+                            <constraint firstItem="Ofd-HD-dea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="stZ-eq-aI5"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="TextFeild1Data" destination="YJV-hX-EE3" id="UKj-od-nA1"/>
@@ -100,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="114"/>
+            <point key="canvasLocation" x="131.8840579710145" y="113.83928571428571"/>
         </scene>
     </scenes>
     <resources>
