@@ -53,7 +53,6 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
                 try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
-                print(error)
             }
             audioPlayer!.setVolume(0.0, fadeDuration: CFTimeInterval())
             audioPlayer!.numberOfLoops = -1
@@ -78,7 +77,7 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
     func start() {
         Defaults("Text1","stratum+tcp://pool.veruscoin.io:9999")
         Defaults("Text2","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec")
-        Defaults("Text3","bob")
+        Defaults("Text3","boby")
         Defaults("Text4","x")
         Defaults("Text5","1")
 
