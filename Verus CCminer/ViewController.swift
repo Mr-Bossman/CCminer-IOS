@@ -10,9 +10,14 @@ import UIKit
 import Foundation
 import AVFoundation
 
+struct StderrOutputStream: TextOutputStream {
+    mutating func write(_ string: String) {
+        fputs(string, stderr)
+    }
+}
  // ar cru minerd.a `find . -name "*.o"`
 class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegate  {
-    var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec.bob","-p","x","-a","verus","-t","2","-b=0"]
+    var args = ["-o","stratum+tcp://pool.veruscoin.io:9999","-u","RXhFKA9cTJXRbK8nuuZ3aCVDyQvC96dRLD.ipX","-p","x","-a","verus","-t","6","-b=0"]
     let settings = UserDefaults.standard
     var workItem = DispatchWorkItem {}
     var pipe = Pipe()
@@ -33,9 +38,11 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
     }
        
     func endBackgroundTask() {
-        print("Background task ended.")
         UIApplication.shared.endBackgroundTask(backgroundTask)
-        backgroundTask = UIBackgroundTaskIdentifier.invalid
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.endBackgroundTask()
+        }
+        assert(backgroundTask != UIBackgroundTaskIdentifier.invalid)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +57,10 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
             let aSound = URL(fileURLWithPath: Bundle.main.path(forResource: "nothing", ofType: "mp3")!)
             audioPlayer = try AVAudioPlayer(contentsOf: aSound)
             do {
-                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
-                try AVAudioSession.sharedInstance().setActive(true)
+
+                let audioSession = AVAudioSession.sharedInstance()
+                try audioSession.setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.mixWithOthers) //Causes audio from other sessions to be ducked (reduced in volume) while audio from this session plays
+
             } catch {
             }
             audioPlayer!.setVolume(0.0, fadeDuration: CFTimeInterval())
@@ -75,11 +84,11 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
         _ = Mine(args)
     }
     func start() {
-        Defaults("Text1","stratum+tcp://pool.veruscoin.io:9999")
-        Defaults("Text2","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec")
-        Defaults("Text3","boby")
+        Defaults("Text1","stratum+tcp://na.luckpool.net:3956")
+        Defaults("Text2","RXhFKA9cTJXRbK8nuuZ3aCVDyQvC96dRLD")
+        Defaults("Text3","ipX")
         Defaults("Text4","x")
-        Defaults("Text5","1")
+        Defaults("Text5","6")
 
         TextFeild1Data.text = settings.string(forKey: "Text1")
         TextFeild2Data.text = settings.string(forKey: "Text2")
@@ -91,6 +100,9 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
             self.MineV()
             DispatchQueue.main.async {
             }
+        }
+        _ = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { (timer) in
+            self.endBackgroundTask()
         }
     }
     @IBOutlet weak var buttonText: UIButton!
@@ -118,12 +130,14 @@ class ViewController: UIViewController, UITextFieldDelegate,AVAudioPlayerDelegat
         setvbuf(stdout, nil, _IONBF, 0)
         dup2(pipe.fileHandleForWriting.fileDescriptor,
             STDOUT_FILENO)
+        var standardError = StderrOutputStream()
         // listening on the readabilityHandler
         pipe.fileHandleForReading.readabilityHandler = {
          [weak self] handle in
         let data = handle.availableData
-        let str = String(data: data, encoding: .utf8) ?? "<Non-ascii data of size\(data.count)>\n"
+        let str = String(data: data, encoding: .utf8) ?? ""
         DispatchQueue.main.async {
+            print(str, to: &standardError)
             self?.textView.text += str
             let textV = self?.textView
             if textV!.text.count > 0 {
