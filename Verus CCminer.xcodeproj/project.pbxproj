@@ -1,0 +1,682 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8877DB6A25EECDB7006E5C73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6925EECDB7006E5C73 /* AppDelegate.swift */; };
+		8877DB6C25EECDB7006E5C73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6B25EECDB7006E5C73 /* SceneDelegate.swift */; };
+		8877DB6E25EECDB7006E5C73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB6D25EECDB7006E5C73 /* ViewController.swift */; };
+		8877DB7125EECDB7006E5C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8877DB6F25EECDB7006E5C73 /* Main.storyboard */; };
+		8877DB7325EECDB9006E5C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8877DB7225EECDB9006E5C73 /* Assets.xcassets */; };
+		8877DB7625EECDB9006E5C73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8877DB7425EECDB9006E5C73 /* LaunchScreen.storyboard */; };
+		8877DB8125EECDB9006E5C73 /* Verus_CCminerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB8025EECDB9006E5C73 /* Verus_CCminerTests.swift */; };
+		8877DB8C25EECDB9006E5C73 /* Verus_CCminerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8877DB8B25EECDB9006E5C73 /* Verus_CCminerUITests.swift */; };
+		8877DBAC25EECEFD006E5C73 /* libcrypto.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBA825EECEFD006E5C73 /* libcrypto.xcframework */; };
+		8877DBAD25EECEFD006E5C73 /* libcurl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBA925EECEFD006E5C73 /* libcurl.xcframework */; };
+		8877DBAE25EECEFD006E5C73 /* libnghttp2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBAA25EECEFD006E5C73 /* libnghttp2.xcframework */; };
+		8877DBAF25EECEFD006E5C73 /* libssl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBAB25EECEFD006E5C73 /* libssl.xcframework */; };
+		8877DBB525EECF08006E5C73 /* minerd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBB325EECF08006E5C73 /* minerd.a */; };
+		8877DBB625EECF08006E5C73 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8877DBB425EECF08006E5C73 /* libjansson.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8877DB7D25EECDB9006E5C73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8877DB5E25EECDB7006E5C73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8877DB6525EECDB7006E5C73;
+			remoteInfo = "Verus CCminer";
+		};
+		8877DB8825EECDB9006E5C73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8877DB5E25EECDB7006E5C73 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8877DB6525EECDB7006E5C73;
+			remoteInfo = "Verus CCminer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8877DB6625EECDB7006E5C73 /* Verus CCminer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Verus CCminer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8877DB6925EECDB7006E5C73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8877DB6B25EECDB7006E5C73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8877DB6D25EECDB7006E5C73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8877DB7025EECDB7006E5C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8877DB7225EECDB9006E5C73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8877DB7525EECDB9006E5C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8877DB7725EECDB9006E5C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8877DB7C25EECDB9006E5C73 /* Verus CCminerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Verus CCminerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8877DB8025EECDB9006E5C73 /* Verus_CCminerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verus_CCminerTests.swift; sourceTree = "<group>"; };
+		8877DB8225EECDB9006E5C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8877DB8725EECDB9006E5C73 /* Verus CCminerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Verus CCminerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8877DB8B25EECDB9006E5C73 /* Verus_CCminerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verus_CCminerUITests.swift; sourceTree = "<group>"; };
+		8877DB8D25EECDB9006E5C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8877DBA325EECEF3006E5C73 /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
+		8877DBA825EECEFD006E5C73 /* libcrypto.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libcrypto.xcframework; path = libs/libcrypto.xcframework; sourceTree = "<group>"; };
+		8877DBA925EECEFD006E5C73 /* libcurl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libcurl.xcframework; path = libs/libcurl.xcframework; sourceTree = "<group>"; };
+		8877DBAA25EECEFD006E5C73 /* libnghttp2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libnghttp2.xcframework; path = libs/libnghttp2.xcframework; sourceTree = "<group>"; };
+		8877DBAB25EECEFD006E5C73 /* libssl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libssl.xcframework; path = libs/libssl.xcframework; sourceTree = "<group>"; };
+		8877DBB325EECF08006E5C73 /* minerd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = minerd.a; path = "Verus CCminer/minerd.a"; sourceTree = "<group>"; };
+		8877DBB425EECF08006E5C73 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson.a; path = "Verus CCminer/libjansson.a"; sourceTree = "<group>"; };
+		8877DC9425EF3CDF006E5C73 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		8877DC9525EF3CE0006E5C73 /* ccminer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ccminer.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8877DB6325EECDB7006E5C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8877DBB525EECF08006E5C73 /* minerd.a in Frameworks */,
+				8877DBB625EECF08006E5C73 /* libjansson.a in Frameworks */,
+				8877DBAC25EECEFD006E5C73 /* libcrypto.xcframework in Frameworks */,
+				8877DBAD25EECEFD006E5C73 /* libcurl.xcframework in Frameworks */,
+				8877DBAE25EECEFD006E5C73 /* libnghttp2.xcframework in Frameworks */,
+				8877DBAF25EECEFD006E5C73 /* libssl.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB7925EECDB9006E5C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB8425EECDB9006E5C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8877DB5D25EECDB7006E5C73 = {
+			isa = PBXGroup;
+			children = (
+				8877DB6825EECDB7006E5C73 /* Verus CCminer */,
+				8877DB7F25EECDB9006E5C73 /* Verus CCminerTests */,
+				8877DB8A25EECDB9006E5C73 /* Verus CCminerUITests */,
+				8877DB6725EECDB7006E5C73 /* Products */,
+				8877DBA225EECEF3006E5C73 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8877DB6725EECDB7006E5C73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8877DB6625EECDB7006E5C73 /* Verus CCminer.app */,
+				8877DB7C25EECDB9006E5C73 /* Verus CCminerTests.xctest */,
+				8877DB8725EECDB9006E5C73 /* Verus CCminerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8877DB6825EECDB7006E5C73 /* Verus CCminer */ = {
+			isa = PBXGroup;
+			children = (
+				8877DC9525EF3CE0006E5C73 /* ccminer.h */,
+				8877DB6925EECDB7006E5C73 /* AppDelegate.swift */,
+				8877DB6B25EECDB7006E5C73 /* SceneDelegate.swift */,
+				8877DB6D25EECDB7006E5C73 /* ViewController.swift */,
+				8877DB6F25EECDB7006E5C73 /* Main.storyboard */,
+				8877DB7225EECDB9006E5C73 /* Assets.xcassets */,
+				8877DB7425EECDB9006E5C73 /* LaunchScreen.storyboard */,
+				8877DB7725EECDB9006E5C73 /* Info.plist */,
+				8877DC9425EF3CDF006E5C73 /* Bridging-Header.h */,
+			);
+			path = "Verus CCminer";
+			sourceTree = "<group>";
+		};
+		8877DB7F25EECDB9006E5C73 /* Verus CCminerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8877DB8025EECDB9006E5C73 /* Verus_CCminerTests.swift */,
+				8877DB8225EECDB9006E5C73 /* Info.plist */,
+			);
+			path = "Verus CCminerTests";
+			sourceTree = "<group>";
+		};
+		8877DB8A25EECDB9006E5C73 /* Verus CCminerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8877DB8B25EECDB9006E5C73 /* Verus_CCminerUITests.swift */,
+				8877DB8D25EECDB9006E5C73 /* Info.plist */,
+			);
+			path = "Verus CCminerUITests";
+			sourceTree = "<group>";
+		};
+		8877DBA225EECEF3006E5C73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8877DBB425EECF08006E5C73 /* libjansson.a */,
+				8877DBB325EECF08006E5C73 /* minerd.a */,
+				8877DBA825EECEFD006E5C73 /* libcrypto.xcframework */,
+				8877DBA925EECEFD006E5C73 /* libcurl.xcframework */,
+				8877DBAA25EECEFD006E5C73 /* libnghttp2.xcframework */,
+				8877DBAB25EECEFD006E5C73 /* libssl.xcframework */,
+				8877DBA325EECEF3006E5C73 /* libs */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8877DC1725EF35E6006E5C73 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8877DB6525EECDB7006E5C73 /* Verus CCminer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8877DB9025EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminer" */;
+			buildPhases = (
+				8877DC1725EF35E6006E5C73 /* Headers */,
+				8877DB6225EECDB7006E5C73 /* Sources */,
+				8877DB6325EECDB7006E5C73 /* Frameworks */,
+				8877DB6425EECDB7006E5C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Verus CCminer";
+			productName = "Verus CCminer";
+			productReference = 8877DB6625EECDB7006E5C73 /* Verus CCminer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8877DB7B25EECDB9006E5C73 /* Verus CCminerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8877DB9325EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminerTests" */;
+			buildPhases = (
+				8877DB7825EECDB9006E5C73 /* Sources */,
+				8877DB7925EECDB9006E5C73 /* Frameworks */,
+				8877DB7A25EECDB9006E5C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8877DB7E25EECDB9006E5C73 /* PBXTargetDependency */,
+			);
+			name = "Verus CCminerTests";
+			productName = "Verus CCminerTests";
+			productReference = 8877DB7C25EECDB9006E5C73 /* Verus CCminerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8877DB8625EECDB9006E5C73 /* Verus CCminerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8877DB9625EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminerUITests" */;
+			buildPhases = (
+				8877DB8325EECDB9006E5C73 /* Sources */,
+				8877DB8425EECDB9006E5C73 /* Frameworks */,
+				8877DB8525EECDB9006E5C73 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8877DB8925EECDB9006E5C73 /* PBXTargetDependency */,
+			);
+			name = "Verus CCminerUITests";
+			productName = "Verus CCminerUITests";
+			productReference = 8877DB8725EECDB9006E5C73 /* Verus CCminerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8877DB5E25EECDB7006E5C73 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8877DB6525EECDB7006E5C73 = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+					8877DB7B25EECDB9006E5C73 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8877DB6525EECDB7006E5C73;
+					};
+					8877DB8625EECDB9006E5C73 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8877DB6525EECDB7006E5C73;
+					};
+				};
+			};
+			buildConfigurationList = 8877DB6125EECDB7006E5C73 /* Build configuration list for PBXProject "Verus CCminer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8877DB5D25EECDB7006E5C73;
+			productRefGroup = 8877DB6725EECDB7006E5C73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8877DB6525EECDB7006E5C73 /* Verus CCminer */,
+				8877DB7B25EECDB9006E5C73 /* Verus CCminerTests */,
+				8877DB8625EECDB9006E5C73 /* Verus CCminerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8877DB6425EECDB7006E5C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8877DB7625EECDB9006E5C73 /* LaunchScreen.storyboard in Resources */,
+				8877DB7325EECDB9006E5C73 /* Assets.xcassets in Resources */,
+				8877DB7125EECDB7006E5C73 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB7A25EECDB9006E5C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB8525EECDB9006E5C73 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8877DB6225EECDB7006E5C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8877DB6E25EECDB7006E5C73 /* ViewController.swift in Sources */,
+				8877DB6A25EECDB7006E5C73 /* AppDelegate.swift in Sources */,
+				8877DB6C25EECDB7006E5C73 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB7825EECDB9006E5C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8877DB8125EECDB9006E5C73 /* Verus_CCminerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8877DB8325EECDB9006E5C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8877DB8C25EECDB9006E5C73 /* Verus_CCminerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8877DB7E25EECDB9006E5C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8877DB6525EECDB7006E5C73 /* Verus CCminer */;
+			targetProxy = 8877DB7D25EECDB9006E5C73 /* PBXContainerItemProxy */;
+		};
+		8877DB8925EECDB9006E5C73 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8877DB6525EECDB7006E5C73 /* Verus CCminer */;
+			targetProxy = 8877DB8825EECDB9006E5C73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8877DB6F25EECDB7006E5C73 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8877DB7025EECDB7006E5C73 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8877DB7425EECDB9006E5C73 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8877DB7525EECDB9006E5C73 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8877DB8E25EECDB9006E5C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8877DB8F25EECDB9006E5C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8877DB9125EECDB9006E5C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Verus CCminer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Verus\\ CCminer",
+				);
+				"MODULEMAP_FILE[sdk=*]" = "$(PROJECT_DIR)/ccminer/ccminer.modulemap";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-lc++",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.verus.ccminer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[arch=*]" = .;
+				SWIFT_OBJC_BRIDGING_HEADER = "Verus CCminer/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8877DB9225EECDB9006E5C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "Verus CCminer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Verus\\ CCminer",
+				);
+				MODULEMAP_FILE = "$(PROJECT_DIR)/ccminer/ccminer.modulemap";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-lc++",
+					"-lz",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.verus.ccminer.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = .;
+				SWIFT_OBJC_BRIDGING_HEADER = "Verus CCminer/Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8877DB9425EECDB9006E5C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				INFOPLIST_FILE = "Verus CCminerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Verus.Verus-CCminerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Verus CCminer.app/Verus CCminer";
+			};
+			name = Debug;
+		};
+		8877DB9525EECDB9006E5C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				INFOPLIST_FILE = "Verus CCminerTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Verus.Verus-CCminerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Verus CCminer.app/Verus CCminer";
+			};
+			name = Release;
+		};
+		8877DB9725EECDB9006E5C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				INFOPLIST_FILE = "Verus CCminerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Verus.Verus-CCminerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Verus CCminer";
+			};
+			name = Debug;
+		};
+		8877DB9825EECDB9006E5C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DHXH9HH4T5;
+				INFOPLIST_FILE = "Verus CCminerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Verus.Verus-CCminerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Verus CCminer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8877DB6125EECDB7006E5C73 /* Build configuration list for PBXProject "Verus CCminer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8877DB8E25EECDB9006E5C73 /* Debug */,
+				8877DB8F25EECDB9006E5C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8877DB9025EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8877DB9125EECDB9006E5C73 /* Debug */,
+				8877DB9225EECDB9006E5C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8877DB9325EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8877DB9425EECDB9006E5C73 /* Debug */,
+				8877DB9525EECDB9006E5C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8877DB9625EECDB9006E5C73 /* Build configuration list for PBXNativeTarget "Verus CCminerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8877DB9725EECDB9006E5C73 /* Debug */,
+				8877DB9825EECDB9006E5C73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8877DB5E25EECDB7006E5C73 /* Project object */;
+}

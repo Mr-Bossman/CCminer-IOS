@@ -1,0 +1,1 @@
+#import "ccminer.h"
