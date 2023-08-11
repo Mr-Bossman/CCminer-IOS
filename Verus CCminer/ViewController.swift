@@ -11,22 +11,17 @@ class ViewController: UIViewController {
     let settings = UserDefaults.standard
     var workItem = DispatchWorkItem {}
     var pipe = Pipe()
+    var running = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         start()
     }
-    @objc func MineV(){
+    func MineV(){
         Mine(args)
     }
     func start() {
-        workItem = DispatchWorkItem {
-            self.MineV()
-          DispatchQueue.main.async {
-           print("done")
-          }
-       }
         Defaults("Text1","stratum+tcp://pool.veruscoin.io:9999")
         Defaults("Text2","REoPcdGXthL5yeTCrJtrQv5xhYTknbFbec")
         Defaults("Text3","bob")
@@ -38,9 +33,15 @@ class ViewController: UIViewController {
         TextFeild3Data.text = settings.string(forKey: "Text3")
         TextFeild4Data.text = settings.string(forKey: "Text4")
         TextFeild5Data.text = settings.string(forKey: "Text5")
-        DispatchQueue.global().async(execute: workItem)
         openConsolePipe ()
+        workItem = DispatchWorkItem {
+            self.MineV()
+            DispatchQueue.main.async {
+                self.running = false
+                self.buttonText.setTitle("Start", for: .normal)
 
+            }
+        }
     }
     @IBOutlet weak var buttonText: UIButton!
     @IBAction func Button (){
@@ -48,10 +49,12 @@ class ViewController: UIViewController {
         args[3] = TextFeild2Data.text! + "." + TextFeild3Data.text!
         args[5] = TextFeild3Data.text!
         args[9] = TextFeild5Data.text!
-        print("done")
-        buttonText.setTitle("Stop", for: .normal)
-        DispatchQueue.main.async {
-            self.workItem.cancel()
+        if(running){
+            prop_exit()
+        } else {
+            running = true
+            DispatchQueue.global().async(execute: workItem)
+            buttonText.setTitle("Stop", for: .normal)
         }
 
     }
