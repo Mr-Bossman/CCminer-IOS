@@ -20,6 +20,8 @@ jobs:
       working-directory: ccminer
       run: |
         chmod +x build.sh autogen.sh configure.sh
+        sed -i '' 's#CPPFLAGS="-I\$test#CPPFLAGS="-I$test -I$test/compat/curl-for-windows/openssl/openssl/include -I$test/compat/curl-for-windows/curl/include#' build.sh
+        sed -i '' 's#CCFLAGS="-I\$test#CCFLAGS="-I$test -I$test/compat/curl-for-windows/openssl/openssl/include -I$test/compat/curl-for-windows/curl/include#' build.sh
         ./build.sh
 
     - name: Copy minerd.a into Xcode project
