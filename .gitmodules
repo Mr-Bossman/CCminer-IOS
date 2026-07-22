@@ -1,0 +1,4 @@
+[submodule "ccminer"]
+	path = ccminer
+	url = https://github.com/Mr-Bossman/ccminer.git
+	branch = IOS

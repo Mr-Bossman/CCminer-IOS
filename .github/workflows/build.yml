@@ -1,0 +1,46 @@
+name: Build iOS App
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install autotools
+      run: brew install autoconf automake libtool
+
+    - name: Build minerd.a from ccminer source
+      working-directory: ccminer
+      run: |
+        chmod +x build.sh autogen.sh configure.sh
+        ./build.sh
+
+    - name: Copy minerd.a into Xcode project
+      run: cp "ccminer/minerd.a" "Verus CCminer/minerd.a"
+
+    - name: Build Xcode Project
+      run: |
+        xcodebuild -project "Verus CCminer.xcodeproj" \
+                   -scheme "Verus CCminer" \
+                   -sdk iphoneos \
+                   -configuration Release \
+                   CODE_SIGNING_ALLOWED=NO \
+                   clean build
+
+    - name: Package IPA
+      run: |
+        mkdir -p Payload
+        cp -r build/Release-iphoneos/*.app Payload/ || cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/*.app Payload/
+        zip -r CCMiner.ipa Payload
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: CCMiner-iOS-Build
+        path: CCMiner.ipa
