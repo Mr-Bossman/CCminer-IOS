@@ -20,7 +20,12 @@ jobs:
       working-directory: ccminer/compat/curl-for-windows/openssl
       run: |
         sed -i '' 's#(defined(_M_X64) || defined(__x86_64__)) \&\& !defined(_WIN32)#((defined(_M_X64) || defined(__x86_64__)) \&\& !defined(_WIN32)) || defined(__aarch64__) || defined(__arm64__)#g' config/opensslconf.h
-        grep -n "SIXTY_FOUR_BIT_LONG" config/opensslconf.h
+
+    - name: Patch curl headers for arm64
+      working-directory: ccminer/compat/curl-for-windows/curl/include/curl
+      run: |
+        sed -i '' 's/#define CURL_SIZEOF_LONG 4/#define CURL_SIZEOF_LONG 8/' curlbuild.h
+        sed -i '' 's/#ifdef HAVE_SYS_SOCKET_H/#if 1/' curlbuild.h
 
     - name: Build minerd.a from ccminer source
       working-directory: ccminer
