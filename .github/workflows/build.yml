@@ -1,0 +1,59 @@
+name: Build iOS App
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-14
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Install autotools
+      run: brew install autoconf automake libtool
+
+    - name: Patch OpenSSL headers for arm64
+      working-directory: ccminer/compat/curl-for-windows/openssl
+      run: |
+        sed -i '' 's#(defined(_M_X64) || defined(__x86_64__)) \&\& !defined(_WIN32)#((defined(_M_X64) || defined(__x86_64__)) \&\& !defined(_WIN32)) || defined(__aarch64__) || defined(__arm64__)#g' config/opensslconf.h
+
+    - name: Patch curl headers for arm64
+      working-directory: ccminer/compat/curl-for-windows/curl/include/curl
+      run: |
+        sed -i '' 's/#define CURL_SIZEOF_LONG 4/#define CURL_SIZEOF_LONG 8/' curlbuild.h
+        sed -i '' 's/#ifdef HAVE_SYS_SOCKET_H/#if 1/' curlbuild.h
+
+    - name: Build minerd.a from ccminer source
+      working-directory: ccminer
+      run: |
+        chmod +x build.sh autogen.sh configure.sh
+        sed -i '' 's#CPPFLAGS="-I\$test#CPPFLAGS="-I$test -I$test/compat/jansson -I$test/compat/curl-for-windows/openssl/openssl/include -I$test/compat/curl-for-windows/curl/include#' build.sh
+        sed -i '' 's#CCFLAGS="-I\$test#CCFLAGS="-I$test -I$test/compat/jansson -I$test/compat/curl-for-windows/openssl/openssl/include -I$test/compat/curl-for-windows/curl/include#' build.sh
+        ./build.sh
+
+    - name: Copy minerd.a into Xcode project
+      run: cp "ccminer/minerd.a" "Verus CCminer/minerd.a"
+
+    - name: Build Xcode Project
+      run: |
+        xcodebuild -project "Verus CCminer.xcodeproj" \
+                   -scheme "Verus CCminer" \
+                   -sdk iphoneos \
+                   -configuration Release \
+                   CODE_SIGNING_ALLOWED=NO \
+                   clean build
+
+    - name: Package IPA
+      run: |
+        mkdir -p Payload
+        cp -r build/Release-iphoneos/*.app Payload/ || cp -r ~/Library/Developer/Xcode/DerivedData/*/Build/Products/Release-iphoneos/*.app Payload/
+        zip -r CCMiner.ipa Payload
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: CCMiner-iOS-Build
+        path: CCMiner.ipa
